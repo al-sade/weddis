@@ -1,0 +1,9 @@
+config.php
+assets/uploads/*
+assets/css/vendor
+assets/js
+vendor
+wed-admin/bootstrap
+wed-admin/bootstrap-rtl-master
+wed-admin/font-awesome
+wed-admin/js
