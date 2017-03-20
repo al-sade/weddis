@@ -13,5 +13,7 @@ $weddis = new WEDDIS();
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/viewbox.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
-</head>
+    <script type="text/javascript" src="assets/js/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
 

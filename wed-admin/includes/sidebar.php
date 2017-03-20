@@ -41,22 +41,21 @@
                                   <li><a href="events.php">אירועים</a></li>
                                 </ul>
                             </li>
-                            <li><a href="calendar.php"><i class="fa fa-calendar"></i>  <span class="nav-label">Calendar </span></a></li>
-
-                            <li>
-                                <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level collapse">
-                                    <li>
-                                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level collapse">
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Second Level Item</a></li>
+                            <li class="active">
+                                <a href="albums.php"><i class="fa fa-th-large"></i> <span class="nav-label">אלבומים </span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse in">
+                                  <li><a href="albums.php">אלבומים</a></li>
+                                  <li><a href="add_album.php">הוספה</a></li>
                                 </ul>
                             </li>
+                            <li><a href="calendar.php"><i class="fa fa-calendar"></i>  <span class="nav-label">Calendar </span></a></li>
+                            <li class="active">
+                                <a href="testimonials.php"><i class="fa fa-th-large"></i> <span class="nav-label">המלצות </span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse in">
+                                  <li><a href="add_testimonials.php">הוספת המלצה</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
 
                     </div>

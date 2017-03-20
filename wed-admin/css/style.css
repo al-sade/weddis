@@ -1,6 +1,45 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,800';
 
 /*** Al's Custom***/
+.album-img {
+    height: 250px;
+    width: 250px;
+    float: right;
+    background-size: cover;
+    margin: 15px;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    box-shadow: 1px 2px 8px black;
+}
+
+.gallery-col a {
+    width: 33% !important;
+}
+input#selectedButton {
+    background: #01A8FE;
+    color: #FFF;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+.upload-album{
+    background: #01A8FE;
+    font-size: 18px;
+    padding: 12px;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.upload-album:hover, input#selectedButton:hover{
+    cursor: pointer;
+    background: #4CAF50;
+}
+.wadmin-nav .sale-state-box:hover{
+    background: #ADACAA;
+}
 .btn-file {
     position: relative;
     overflow: hidden;

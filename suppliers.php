@@ -5,8 +5,10 @@
 require_once('head.php');
 $cat = $_GET['cat'];
 $cat_id = $weddis->getCatId($cat);
+
+require_once('lunar_head.php');
 ?>
-    
+</head>   
 <body>
 <!-- Fixed navbar -->
 <?php require_once('header.php')?>
@@ -66,7 +68,7 @@ $cat_id = $weddis->getCatId($cat);
 					</a>
 				</div>
 				<div class="supplierItem__headline">
-					<h3 class="supplier__name pull-right"><a href="supplier.php?supplierId=1">סַפָּק</a></h3>
+					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=1">סַפָּק</a></h3>
 					<!-- Wishlist Button -->
 					<div class="wishlist__button pull-left">
 						<a href="#">

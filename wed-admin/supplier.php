@@ -175,7 +175,11 @@ $cat_name = $auth_admin->getCategoryName($supplier['category_id']);
                             <div class="col-md-3">
                                 <div class="profile-states">
                                     <h3>נתונים</h3>
-                                    <div class="sale-state-box">
+                                    <a class="wadmin-nav" href="supplier-albums.php?sid=<?php echo $supplier_id ?>">
+                                        <div class="sale-state-box">
+                                            <h3>3</h3> <span>אלבומים</span> </div></a>
+                                        <div class="sale-state-box">
+                                    
                                         <h3>654</h3> <span>פניות</span> </div>
                                     <div class="sale-state-box">
                                         <h3>79</h3> <span>חוזים</span> </div>

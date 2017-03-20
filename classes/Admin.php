@@ -142,8 +142,7 @@ public function getEventStatus($event_id){
   return $result[0]['status'];
 }
     
-public function registerSupplier($profile_pic, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $reco, $desc)
-{
+public function registerSupplier($profile_pic, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $reco, $desc){
   try{
 
 
@@ -189,4 +188,41 @@ public function registerSupplier($profile_pic, $first_name, $last_name, $email, 
     }
 }
 
+public function saveAlbumRecord($album_name, $supplier_id){
+    try{
+    $stmt = $this->conn->prepare("INSERT INTO w_albums (
+        `album_id` ,
+        `supplier_id` ,
+        `album_name`,
+        `submit_date`
+      )
+      VALUES (
+        NULL ,  :supplier_id,  :album_name, CURRENT_TIMESTAMP
+      );");
+
+      $stmt->bindparam(":supplier_id", $supplier_id);
+      $stmt->bindparam(":album_name", $album_name);
+      $stmt->execute();
+      return $stmt;
+        }catch (PDOException $e){
+            echo $e->getMessage();
+     }
+}
+   
+public function getAllAlbums(){
+  $stmt = $this->conn->prepare(" SELECT * FROM w_albums");
+  $stmt->execute();
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+  return $result;
+  
+}
+    
+public function getSupplierAlbums($supplier_id){
+  $stmt = $this->conn->prepare(" SELECT * FROM w_albums WHERE supplier_id = :supplier_id");
+  $stmt->execute(array(':supplier_id' => $supplier_id));
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+  return $result;
+}
+    
+//End of Admin Class
 }
