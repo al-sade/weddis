@@ -80,5 +80,18 @@ class WEDDIS
 		}
         
     }
-
+    
+    public function getSupplierAlbums($supplier_id){
+            $stmt = $this->conn->prepare("SELECT * FROM w_albums WHERE supplier_id = :supplier_id;");
+            $stmt->execute(array(':supplier_id' => $supplier_id));
+            $result = $stmt->fetchall(PDO::FETCH_OBJ);
+            return $result;
+    }
+    
+    public function getTestimonials($supplier_id){
+            $stmt = $this->conn->prepare("SELECT * FROM w_testimonials WHERE supplier_id = :supplier_id;");
+            $stmt->execute(array(':supplier_id' => $supplier_id));
+            $result = $stmt->fetchall(PDO::FETCH_OBJ);
+            return $result;
+    }
 }
