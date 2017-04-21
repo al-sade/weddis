@@ -44,7 +44,7 @@ require_once('lunar_head.php');
                                 <input type="number" name="supplierRating" id="some_id" class="rating" data-inline> </div>
                             <!-- /Suppliers Rating -->
 <!--                            TODO: Real supplier data-->
-                            <button href="#" class="wishlist supplier__wishlist pull-left" supplier_name="<?php echo $supplier_name;  ?>" supplier_id="supplier1" supplier_price="90">Add to Wishlist <i class="wishlist__icon"></i></button>
+                            <button href="#" class="wishlist supplier__wishlist pull-left" supplier_name="<?php echo $supplier_name;  ?>" supplier_id="<?php echo $supplier_id; ?>" >Add to Wishlist <i class="wishlist__icon"></i></button>
 
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-3 supplier__img">
@@ -114,7 +114,8 @@ require_once('lunar_head.php');
                                 <!-- /Container for testimonials slides -->
                             <?php } ?>
                         </div>
-                        <!-- Testimonials Badge --><i class="testimonials__badge"></i> </div>
+                        <!-- Testimonials Badge --><i class="testimonials__badge"></i> 
+                    </div>
             </section>
             <!-- /Testimonials Section -->
             <!-- /Single Supplier Section -->

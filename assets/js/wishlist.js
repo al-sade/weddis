@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         for (i = 0; i < wishlist_suppliers.length; i++) {            
 //            init wishlist - TODO: get suppliers by id CLIENT SIDE
-            $supplier_str = "<tr class='wishlist-item' id='list_id_" + wishlist_suppliers[i]['id'] + "'><td class='w-pname'>" + wishlist_suppliers[i]['name'] + "</td><td class='w-price'>$ " + wishlist_suppliers[i]['price'] + "</td><td class='w-premove' wpid='" + wishlist_suppliers[i]['id'] + "'>x</td></tr>";
+            $supplier_str = "<tr class='wishlist-item' id='list_id_" + wishlist_suppliers[i]['id'] + "'><td class='w-pname'>" + wishlist_suppliers[i]['name'] + "</td><td class='w-premove' wpid='" + wishlist_suppliers[i]['id'] + "'>x</td></tr>";
             
             jQuery("#wish_list_item").append($supplier_str);
             wish_list.push(wishlist_suppliers[i]);
@@ -20,15 +20,13 @@ jQuery(function () {
         $data = "";
         $supplier_id = jQuery(this).attr("supplier_id");
         $supplier_name = jQuery(this).attr("supplier_name");
-        $supplier_price = jQuery(this).attr("supplier_price");
         $supplier = {
             'id': $supplier_id, 
-            'name': $supplier_name,
-            'price': $supplier_price
-            }
-        
-        if (jQuery.inArray($supplier_id, wish_list) == -1) {
-            $supplier_str = "<tr class='wishlist-item' id='list_id_" + $supplier_id + "'><td class='w-pname'>" + $supplier_name + "</td><td class='w-price'>$ " + $supplier_price + "</td><td class='w-premove' wpid='" + $supplier_id + "'>x</td></tr>";
+            'name': $supplier_name
+        }
+        var wislist_ids = wish_list.map(function(a) {return a.id;});
+        if (jQuery.inArray(String($supplier_id), wislist_ids) == -1) {
+            $supplier_str = "<tr class='wishlist-item' id='list_id_" + $supplier_id + "'><td class='w-pname'>" + $supplier_name + "</td><td class='w-premove' wpid='" + $supplier_id + "'>x</td></tr>";
             jQuery("#wish_list_item").append($supplier_str);
             wish_list.push($supplier);
             localStorage.setItem("w_suppliers", JSON.stringify(wish_list)); //save to localstorage

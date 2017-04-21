@@ -59,23 +59,28 @@ require_once('lunar_head.php');
 						<img src="<?php echo 'assets/uploads/'.$supplier->profile_pic; ?>" alt="Photo" class="img-responsive">
 						<!-- Wishlist Badge -->
 						<div class="team__wishlist">
-							<img src="assets/img/icons/icon-heart.png" class="img-responsive team__wishlist__heart" alt="Wishlist icon">
-							Wishlist
+                             <button href="#" class="wishlist supplier_wishlist_button" supplier_name="<?php echo $sup_name;  ?>" supplier_id="<?php echo $supplier->supplier_id ?>" >Wishlist <i class="wishlist__icon"></i></button>
+<!--							<img src="assets/img/icons/icon-heart.png" class="img-responsive team__wishlist__heart" alt="Wishlist icon">-->
+							
 						</div><!-- /Wishlist Badge -->
 						<!-- Hover effect and caption -->
+<!--
 						<div class="team__img__hover">
 							<p class="team__img__caption">כיתוב תמונה <span>></span></p>
-						</div><!-- /Hover effect and caption -->
+						</div>
+-->
+                        <!-- /Hover effect and caption -->
 					</a>
 				</div>
 				<div class="supplierItem__headline">
-					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=1"><?php echo $sup_name; ?></a></h3>
+					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=<?php echo $supplier->supplier_id; ?>"><?php echo $sup_name; ?></a></h3>
 					<!-- Wishlist Button -->
 					<div class="wishlist__button pull-left">
 						<a href="#">
 							<i class="wishlistButton__icon"></i>
 							<!-- hover effect -->
-							<p class="wishlistButton__hover">Add to Wishlist</p><!-- /hover effect -->
+<!--							<p class="wishlistButton__hover">Add to Wishlist</p>-->
+                            <!-- /hover effect -->
 						</a>
 					</div><!-- Wishlist Button -->
 				</div>

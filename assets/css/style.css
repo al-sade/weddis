@@ -35,6 +35,27 @@
 .ln_cursor{
     padding: 15px;
 }
+
+.w-premove{
+    cursor: pointer;
+    position: absolute;
+    left: 55px;
+}
+
+.w-premove:hover{
+    font-weight: 700;
+}
+
+td.w-pname {
+    font-size: 16px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.supplier_wishlist_button{
+    background: transparent;
+    box-shadow: none !important;
+}
 /* ---------------------------------------------- /*
  * Header
 /* ---------------------------------------------- */
