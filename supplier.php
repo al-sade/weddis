@@ -43,8 +43,12 @@ require_once('lunar_head.php');
                                 <label>דֵרוּג</label>
                                 <input type="number" name="supplierRating" id="some_id" class="rating" data-inline> </div>
                             <!-- /Suppliers Rating -->
+<<<<<<< HEAD
 <!--                            TODO: Real supplier data-->
                             <button href="#" class="wishlist supplier__wishlist pull-left" supplier_name="<?php echo $supplier_name;  ?>" supplier_id="supplier1" supplier_price="90">Add to Wishlist <i class="wishlist__icon"></i></button>
+=======
+                            <button href="#" class="wishlist supplier__wishlist pull-left" supplier_name="supplier 1" supplier_id="supplier1" supplier_price="90">Add to Wishlist <i class="wishlist__icon"></i></button>
+>>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-3 supplier__img">
                             <a href="#"> <img src="assets/img/team-photo.jpg" alt="Photo" class="img-responsive"> </a>

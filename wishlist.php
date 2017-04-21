@@ -12,7 +12,11 @@
 	$date = strip_tags($_POST['date']);
 	$message = strip_tags($_POST['message']);
     
+<<<<<<< HEAD
     $suppliers = strip_tags($_POST['suppliers']); //add suppliers from list
+=======
+    $suppliers = strip_tags($_POST['suppliers']);; //add suppliers from list
+>>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 	try {
         $weddis->submitEvent($name, $phone, $email, $date, $message, $suppliers);
     } catch (Exception $e) {

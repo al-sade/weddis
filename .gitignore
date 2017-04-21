@@ -1,5 +1,4 @@
 test.php
-/assets/css/vendor/*
 /assets/img/*
 /assets/uploads/*
 /assets/lunar_assets/*
@@ -7,3 +6,11 @@ test.php
 config.php
 /wed-admin/images/*
 /wed-admin/bootstrap/*
+assets/css/vendor
+assets/js
+vendor
+wed-admin/bootstrap
+wed-admin/bootstrap-rtl-master
+wed-admin/font-awesome
+wed-admin/js
+wed-admin/images/
