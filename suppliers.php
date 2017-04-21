@@ -5,7 +5,7 @@
 require_once('head.php');
 $cat = $_GET['cat'];
 $cat_id = $weddis->getCatId($cat);
-
+$suppliers = $weddis->getRandCategorySuppliers($cat_id);
 require_once('lunar_head.php');
 ?>
 </head>   
@@ -17,7 +17,7 @@ require_once('lunar_head.php');
 <section id="main">
 	<div class="container">
 		<div id="supplier-image" class="supplierscreen suppliers__main text-center" style="background: url(assets/img/supplier-fix.png) no-repeat center;">
-			<h1 class="main__headline"><?php echo $cat_id; ?></h1>
+			<h1 class="main__headline"><?php echo $cat; ?></h1>
 		</div>
 	</div>
 </section><!-- /Main Screen Section -->
@@ -48,14 +48,15 @@ require_once('lunar_head.php');
 		</div>
 		<!-- Suppliers List Row -->
 		<div class="row">
-
-<!--            TODO: loop over events-->
-            <?php for ($x = 0; $x < 8; $x++) { ?>
-            			<!-- Single Supplier Item -->
+<!--            TODO: loop over suppliers-->
+                <!-- Single Supplier Item -->
+            <?php foreach ($suppliers as $supplier) { 
+            $sup_name = $supplier->first_name.' '.$supplier->last_name;
+            ?>
 			<div class="col-xs-12 col-sm-3 supplierPage__supplier">
 				<div class="team__img">
 					<a href="#">
-						<img src="assets/img/team-photo.jpg" alt="Photo" class="img-responsive">
+						<img src="<?php echo 'assets/uploads/'.$supplier->profile_pic; ?>" alt="Photo" class="img-responsive">
 						<!-- Wishlist Badge -->
 						<div class="team__wishlist">
 							<img src="assets/img/icons/icon-heart.png" class="img-responsive team__wishlist__heart" alt="Wishlist icon">
@@ -68,7 +69,7 @@ require_once('lunar_head.php');
 					</a>
 				</div>
 				<div class="supplierItem__headline">
-					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=1">סַפָּק</a></h3>
+					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=1"><?php echo $sup_name; ?></a></h3>
 					<!-- Wishlist Button -->
 					<div class="wishlist__button pull-left">
 						<a href="#">
@@ -80,8 +81,8 @@ require_once('lunar_head.php');
 				</div>
 				<!-- Suppliers Rating -->
 				<div class="supplier__rating">
-					<label>דֵרוּג</label>
-					<input type="number" name="supplierRating__output" id="some_id" class="rating" value="4" data-inline data-readonly>
+					<label>דירוג</label>
+					<input type="number" name="supplierRating__output" id="some_id" class="rating" value="<?php echo $supplier->rank; ?>" data-inline data-readonly>
 				</div><!-- /Suppliers Rating -->
 				<div class="team__play">
 					<a href="#" class="team__play__icon"></a>

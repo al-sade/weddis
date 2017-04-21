@@ -18,27 +18,51 @@ class WEDDIS
 		return $stmt;
 	}
 
-  public function getSuppliers(){
-    $stmt = $this->conn->prepare("SELECT * FROM weddis.w_suppliers;");
-    $stmt->execute();
-    $result = $stmt->fetchall(PDO::FETCH_OBJ);
-    return $result;
-  }
-    
     public function getCatId($name){
-        $stmt = $this->conn->prepare("select category_id where name = :name");
+        try{
+            $stmt = $this->conn->prepare("
+            SELECT category_id 
+            FROM w_categories
+            WHERE category_name = :category_name");
+            $stmt->execute(array(':category_name' => $name));
+            $result = $stmt->fetchall(PDO::FETCH_ASSOC);
+            $cat_id = $result[0]["category_id"];
+            return $cat_id;
+        } catch (Exception $e){
+            echo 'Message: ' .$e->getMessage();
+        }
     }
     
     public function getSupplier($supplier_id){
-        $stmt = $this->conn->prepare("SELECT * FROM weddis.w_suppliers where supplier_id=:supplier_id");
+        $stmt = $this->conn->prepare("SELECT * FROM w_suppliers where supplier_id=:supplier_id");
         $stmt->execute(array(':supplier_id' => $supplier_id));
         $result = $stmt->fetchall(PDO::FETCH_ASSOC);
         return $result[0];
     }
     
+    public function getSuppliers(){
+        $stmt = $this->conn->prepare("SELECT * FROM w_suppliers;");
+        $stmt->execute();
+        $result = $stmt->fetchall(PDO::FETCH_OBJ);
+        return $result;
+    }
+    
+//    present category suppliers random based on business logic 
+    public function getRandCategorySuppliers($cat_id){
+        $stmt = $this->conn->prepare("
+        SELECT * FROM w_suppliers
+        WHERE category_id = :cat_id
+        ORDER BY RAND()
+        LIMIT 8
+        ");
+        $stmt->execute(array(':cat_id' => $cat_id));
+        $result = $stmt->fetchall(PDO::FETCH_OBJ);
+        return $result;
+    }
+    
     //improve to query oall idsnce for  - get_wishlist.php
     public function getSupplierImage($id){
-        $stmt = $this->conn->prepare("SELECT profile_pic FROM weddis.w_suppliers where supplier_id=:supplier_id");
+        $stmt = $this->conn->prepare("SELECT profile_pic FROM w_suppliers where supplier_id=:supplier_id");
         $stmt->execute(array(':supplier_id' => $id));
         $result = $stmt->fetchall(PDO::FETCH_ASSOC);
         if(isset($result[0]['profile_pic'])){

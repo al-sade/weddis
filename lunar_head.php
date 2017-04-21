@@ -1,3 +1,5 @@
+<!--Our supplier page gallery plugin-->
+
 <!--LUNAR PLUGIN RELATED SCRIPTS AND STYLES-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>

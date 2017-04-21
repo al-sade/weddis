@@ -48,7 +48,7 @@ $suppliers= $auth_admin->getAllSuppliers();
                                                 $output .= '<td><a href="supplier.php?sid='.$supplier['supplier_id'].'">';
                                                 $output .= $supplier['first_name'].' '.$supplier['last_name'].'</a></td>';
                                                 $output .= '<td><a href="mailto:'.$supplier['email'].'">'.$supplier['email'].'</a></td>';
-                                                $output .= '<td>'.$supplier['category_id'].'</td>';
+                                                $output .= '<td>'.$supplier['category_name'].'</td>';
                                                 $output .= '<td>'.$supplier['phone'].'</td>';
                                                 $output .= '<td>'.$supplier['rank'].'</td>';
                                                 $output .= '<td>'.$supplier['location'].'</td>';
