@@ -77,13 +77,9 @@ public function getSupplier($supplier_id){
 }
   public function getAllSuppliers()
 {
-<<<<<<< HEAD
   $stmt = $this->conn->prepare(" SELECT w_suppliers.*, w_categories.category_name  
   FROM w_suppliers
   INNER JOIN w_categories ");
-=======
-  $stmt = $this->conn->prepare(" SELECT * FROM w_suppliers");
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
   $stmt->execute();
   $result=$stmt->fetchall(PDO::FETCH_ASSOC);
   return $result;

@@ -18,7 +18,6 @@ class WEDDIS
 		return $stmt;
 	}
 
-<<<<<<< HEAD
     public function getCatId($name){
         try{
             $stmt = $this->conn->prepare("
@@ -34,9 +33,7 @@ class WEDDIS
         }
     }
     
-    public function getSupplier($supplier_id){
-        $stmt = $this->conn->prepare("SELECT * FROM w_suppliers where supplier_id=:supplier_id");
-=======
+
   public function getSuppliers(){
     $stmt = $this->conn->prepare("SELECT * FROM weddis.w_suppliers;");
     $stmt->execute();
@@ -44,25 +41,14 @@ class WEDDIS
     return $result;
   }
     
-    public function getCatId($name){
-        $stmt = $this->conn->prepare("select category_id where name = :name");
-    }
     
     public function getSupplier($supplier_id){
-        $stmt = $this->conn->prepare("SELECT * FROM weddis.w_suppliers where supplier_id=:supplier_id");
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
+        $stmt = $this->conn->prepare("SELECT * FROM w_suppliers where supplier_id=:supplier_id");
         $stmt->execute(array(':supplier_id' => $supplier_id));
         $result = $stmt->fetchall(PDO::FETCH_ASSOC);
         return $result[0];
     }
     
-<<<<<<< HEAD
-    public function getSuppliers(){
-        $stmt = $this->conn->prepare("SELECT * FROM w_suppliers;");
-        $stmt->execute();
-        $result = $stmt->fetchall(PDO::FETCH_OBJ);
-        return $result;
-    }
     
 //    present category suppliers random based on business logic 
     public function getRandCategorySuppliers($cat_id){
@@ -78,13 +64,9 @@ class WEDDIS
     }
     
     //improve to query oall idsnce for  - get_wishlist.php
-    public function getSupplierImage($id){
-        $stmt = $this->conn->prepare("SELECT profile_pic FROM w_suppliers where supplier_id=:supplier_id");
-=======
-    //improve to query oall idsnce for  - get_wishlist.php
+
     public function getSupplierImage($id){
         $stmt = $this->conn->prepare("SELECT profile_pic FROM weddis.w_suppliers where supplier_id=:supplier_id");
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
         $stmt->execute(array(':supplier_id' => $id));
         $result = $stmt->fetchall(PDO::FETCH_ASSOC);
         if(isset($result[0]['profile_pic'])){

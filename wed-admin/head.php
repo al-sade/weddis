@@ -19,19 +19,12 @@
         <link href="bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
         <link href="css/bootstrap-wysihtml5.css" rel="stylesheet">
         <link href="css/waves.min.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="css/nanoscroller.css">
-<<<<<<< HEAD
-        <link href="css//awesome-bootstrap-checkbox.css" rel="stylesheet">
-        <link href="css/menu-light.css" type="text/css" rel="stylesheet">
-        <link href="css/style.css" type="text/css" rel="stylesheet">
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">    
-        <link rel="stylesheet" href="css/jquery.fileupload.css">
-=======
-      <link href="css//awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+      <link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet">
        <link href="css/menu-light.css" type="text/css" rel="stylesheet">
         <link href="css/style.css" type="text/css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 				<link rel="stylesheet" href="css/jquery.fileupload.css">
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

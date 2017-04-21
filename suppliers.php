@@ -5,11 +5,7 @@
 require_once('head.php');
 $cat = $_GET['cat'];
 $cat_id = $weddis->getCatId($cat);
-<<<<<<< HEAD
 $suppliers = $weddis->getRandCategorySuppliers($cat_id);
-=======
-
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 require_once('lunar_head.php');
 ?>
 </head>   
@@ -21,11 +17,7 @@ require_once('lunar_head.php');
 <section id="main">
 	<div class="container">
 		<div id="supplier-image" class="supplierscreen suppliers__main text-center" style="background: url(assets/img/supplier-fix.png) no-repeat center;">
-<<<<<<< HEAD
 			<h1 class="main__headline"><?php echo $cat; ?></h1>
-=======
-			<h1 class="main__headline"><?php echo $cat_id; ?></h1>
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 		</div>
 	</div>
 </section><!-- /Main Screen Section -->
@@ -56,7 +48,6 @@ require_once('lunar_head.php');
 		</div>
 		<!-- Suppliers List Row -->
 		<div class="row">
-<<<<<<< HEAD
 <!--            TODO: loop over suppliers-->
                 <!-- Single Supplier Item -->
             <?php foreach ($suppliers as $supplier) { 
@@ -66,16 +57,6 @@ require_once('lunar_head.php');
 				<div class="team__img">
 					<a href="#">
 						<img src="<?php echo 'assets/uploads/'.$supplier->profile_pic; ?>" alt="Photo" class="img-responsive">
-=======
-
-<!--            TODO: loop over events-->
-            <?php for ($x = 0; $x < 8; $x++) { ?>
-            			<!-- Single Supplier Item -->
-			<div class="col-xs-12 col-sm-3 supplierPage__supplier">
-				<div class="team__img">
-					<a href="#">
-						<img src="assets/img/team-photo.jpg" alt="Photo" class="img-responsive">
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 						<!-- Wishlist Badge -->
 						<div class="team__wishlist">
 							<img src="assets/img/icons/icon-heart.png" class="img-responsive team__wishlist__heart" alt="Wishlist icon">
@@ -88,11 +69,7 @@ require_once('lunar_head.php');
 					</a>
 				</div>
 				<div class="supplierItem__headline">
-<<<<<<< HEAD
 					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=1"><?php echo $sup_name; ?></a></h3>
-=======
-					<h3 class="supplier__name pull-right"><a href="supplier.php?sid=1">סַפָּק</a></h3>
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 					<!-- Wishlist Button -->
 					<div class="wishlist__button pull-left">
 						<a href="#">
@@ -104,13 +81,8 @@ require_once('lunar_head.php');
 				</div>
 				<!-- Suppliers Rating -->
 				<div class="supplier__rating">
-<<<<<<< HEAD
 					<label>דירוג</label>
 					<input type="number" name="supplierRating__output" id="some_id" class="rating" value="<?php echo $supplier->rank; ?>" data-inline data-readonly>
-=======
-					<label>דֵרוּג</label>
-					<input type="number" name="supplierRating__output" id="some_id" class="rating" value="4" data-inline data-readonly>
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
 				</div><!-- /Suppliers Rating -->
 				<div class="team__play">
 					<a href="#" class="team__play__icon"></a>

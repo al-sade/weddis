@@ -1,6 +1,5 @@
 <?php require_once('head.php'); ?>
 
-<<<<<<< HEAD
 <?php
 if(isset($_POST['submit'])){
     $new_status = strip_tags($_POST['new_status']);
@@ -11,8 +10,7 @@ if(isset($_POST['submit'])){
 	}
 }
  ?>
-=======
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
+
 <body>
 <!-- Static navbar -->
 <?php include('includes/header.php');?>
@@ -20,7 +18,6 @@ if(isset($_POST['submit'])){
         <div id="wrapper">
             <div class="content-wrapper container">
                 <div class="row">
-<<<<<<< HEAD
                     <div class="col-sm-8">
                         <section class="page">
                             <form method="post" class="form-horizontal">
@@ -45,25 +42,7 @@ if(isset($_POST['submit'])){
                                     </div>
                                 </div>
                                 <button class="btn btn-primary" type="submit" name="submit">הוספה</button>
-=======
-                    <div class="col-sm-12">
-                        <section class="page">
-                            <form method="post" enctype="multipart/form-data">
-                                <table width="100%">
-                                    <tr>
-                                        <td>Select Photo (one or multiple):</td>
-                                        <td>
-                                            <input type="file" name="files[]" multiple/> </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" align="center">Note: Supported image format: .jpeg, .jpg, .png, .gif</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" align="center">
-                                            <input type="submit" name="create" value="Create Gallery" id="selectedButton" /> </td>
-                                    </tr>
-                                </table>
->>>>>>> 5bef5496790e53bc37a5e2fac20eb01da5aefeed
+
                             </form>
                         </section>
                     </div>
