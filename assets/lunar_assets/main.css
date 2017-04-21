@@ -1,0 +1,83 @@
+/*!!!!! ----TEMPLATE RELATED STYLES (not needed for the plugin)---- !!!!*/
+.sk_logo{
+	float: left;
+}
+#sk_menu{	
+	padding: 20px 0px;
+	background-color: #FFFFFF;
+	background: rgba(255, 255, 255, .89);
+	position: fixed; top: 0; left: 0; width: 100%;	
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);	
+	z-index: 300;
+}
+#sk_menu ul{
+	padding-top: 10px;
+	list-style-type: none;
+	float: right;	
+}
+#sk_menu ul li{
+	display: inline-block;
+	margin: 2px 10px;
+}
+#sk_menu ul li a{
+	color: #333333;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+.sk_wrapper{
+	padding-top: 120px;	
+	min-height: 600px;
+}
+
+.sk_footer{
+	background-color: #000000;
+	background-image: url("../img/wp_footer8.jpg");
+	background-repeat: no-repeat !important;
+	background-attachment: fixed !important;
+	background-position: center !important;
+	background-size: cover !important;	
+	background-color: #000000;
+	padding: 50px 0px;
+}
+.sk_footer_title{
+	text-align: center;
+	font-size: 22px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+.sk_footerTitleUnderline{
+	width: 50px;
+	height: 1px;
+	position: relative;
+	margin: auto;
+	margin-top: 35px;
+	background-color: #FFFFFF;	
+}
+.footerLinks {
+	text-align: center;
+	margin: 0px !important;
+	padding: 0px !important;
+	list-style-type: none;
+	margin-top: 30px !important;
+}
+.footerLinks li {
+	display: inline-block;
+	margin: 0px 10px;
+}
+.footerLinks li a {
+	display: block;
+	text-decoration: none !important;
+	outline: none !important;
+	background-color: #F2F2F2;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 25px;
+}
+
+.clear-fx{
+	clear: both;
+}
+/* /demo template CSS */
