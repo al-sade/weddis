@@ -1,8 +1,8 @@
 test.php
 /assets/css/vendor/*
-#/assets/img/*
+/assets/img/*
 /assets/uploads/*
-#/assets/lunar_assets/*
+/assets/lunar_assets/*
 /vendor/*
 config.php
 /wed-admin/images/*
