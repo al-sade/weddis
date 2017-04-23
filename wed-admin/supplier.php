@@ -1,11 +1,18 @@
 <?php
 require_once('head.php');
 
-$supplier_id = $_GET['sid'];
-$supplier = $auth_admin->getSupplier($supplier_id);
+if(isset($_GET['r_sid'])){
+   $supplier_id = $_GET['r_sid'];
+   $supplier = $auth_admin->getRecoSupplier($supplier_id); 
+   $cat_name = $auth_admin->getRecoCategoryName($supplier['category_id']);
+}else{
+   $supplier_id = $_GET['sid'];
+   $supplier = $auth_admin->getSupplier($supplier_id);
+   $cat_name = $auth_admin->getCategoryName($supplier['category_id']);
+}
+
 $supplier_name = $supplier['first_name'].' '.$supplier['last_name'];
 $supplier_pic = LOCALIMG . $supplier['profile_pic'] ;
-$cat_name = $auth_admin->getCategoryName($supplier['category_id']);
  ?>
 
     <body>
@@ -101,6 +108,13 @@ $cat_name = $auth_admin->getCategoryName($supplier['category_id']);
                                                 <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
                                             </tr>
                                             <tr>
+                                                <td>וידאו</td>
+                                                <td>
+                                                    <a href="<?php echo $supplier['video_link'] ?>" target="_blank">נגן סרטון</a>
+                                                </td>
+                                                <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                                            </tr>
+                                            <tr>
                                                 <td>כתובת</td>
                                                 <td>
                                                     <a href="#">
@@ -172,6 +186,8 @@ $cat_name = $auth_admin->getCategoryName($supplier['category_id']);
                                     </form>
                                 </div>
                             </div>
+                            
+                            
                             <div class="col-md-3">
                                 <div class="profile-states">
                                     <h3>נתונים</h3>
@@ -225,8 +241,10 @@ $cat_name = $auth_admin->getCategoryName($supplier['category_id']);
             <script src="js/pace.min.js"></script>
             <script src="js/waves.min.js"></script>
             <script src="js/jquery-jvectormap-world-mill-en.js"></script>
-            <!--        <script src="js/jquery.nanoscroller.min.js"></script>-->
+            <!--<script src="js/jquery.nanoscroller.min.js"></script>-->
             <script type="text/javascript" src="js/custom.js"></script>
+            <!--supplier video player-->
+        
     </body>
 
     </html>

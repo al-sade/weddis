@@ -69,22 +69,56 @@ public function getCategoryName($cat_id){
   return $result[0];
 }
 
+public function getRecoCategoryName($cat_id){
+  $stmt = $this->conn->prepare(" SELECT category_name FROM w_reco_cat WHERE category_id = :cat_id");
+  $stmt->execute(array(':cat_id' => $cat_id));
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+  return $result[0];
+}
 public function getSupplier($supplier_id){
   $stmt = $this->conn->prepare(" SELECT * FROM w_suppliers WHERE supplier_id = :supplier_id");
   $stmt->execute(array(':supplier_id' => $supplier_id));
   $result=$stmt->fetchall(PDO::FETCH_ASSOC);
   return $result[0];
 }
+    
+public function getRecoSupplier($supplier_id){
+  $stmt = $this->conn->prepare(" SELECT * FROM w_reco_suppliers WHERE supplier_id = :supplier_id");
+  $stmt->execute(array(':supplier_id' => $supplier_id));
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+  return $result[0];
+}
   public function getAllSuppliers()
 {
-  $stmt = $this->conn->prepare(" SELECT w_suppliers.*, w_categories.category_name  
+  $stmt = $this->conn->prepare(" SELECT DISTINCT w_suppliers.*, w_categories.category_name  
   FROM w_suppliers
-  INNER JOIN w_categories ");
+  INNER JOIN w_categories 
+  ON w_suppliers.category_id = w_categories.category_id");
   $stmt->execute();
   $result=$stmt->fetchall(PDO::FETCH_ASSOC);
   return $result;
 }
-
+    
+    
+  public function getRecoSuppliers()
+{
+  $stmt = $this->conn->prepare(" SELECT DISTINCT w_reco_suppliers.*, w_reco_cat.category_name  
+  FROM w_reco_suppliers
+  INNER JOIN w_reco_cat 
+  ON w_reco_suppliers.category_id = w_reco_cat.category_id");
+  $stmt->execute();
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+  return $result;
+}
+      public function getRecoCategories()
+{
+  $stmt = $this->conn->prepare("SELECT * FROM w_reco_cat");
+  $stmt->execute();
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+  return $result;
+}
+   
+    
   public function getAllEvents()
 {
   $stmt = $this->conn->prepare(" SELECT * FROM w_events");
@@ -144,7 +178,7 @@ public function getEventStatus($event_id){
   return $result[0]['status'];
 }
     
-public function registerSupplier($profile_pic, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $reco, $desc){
+public function registerSupplier($file_name, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $video, $reco, $desc){
   try{
 
 
@@ -167,7 +201,7 @@ public function registerSupplier($profile_pic, $first_name, $last_name, $email, 
       `joining_date`
       )
       VALUES (
-        NULL, :first_name, :last_name, :email, :phone, :address, :rank, :category_id, :location, :price, NULL, :profile_pic, NULL,:reco, :desc, CURRENT_TIMESTAMP
+        NULL, :first_name, :last_name, :email, :phone, :address, :rank, :category_id, :location, :price, NULL, :profile_pic, :video_link ,:reco, :desc, CURRENT_TIMESTAMP
       );");
 
       $stmt->bindparam(":first_name", $first_name);
@@ -180,6 +214,7 @@ public function registerSupplier($profile_pic, $first_name, $last_name, $email, 
       $stmt->bindparam(":location", $location);
       $stmt->bindparam(":price", $price);
       $stmt->bindparam(":profile_pic", $profile_pic);
+      $stmt->bindparam(":video_link", $video);
       $stmt->bindparam(":reco", $reco);
       $stmt->bindparam(":desc", $desc);
 			$stmt->execute();
@@ -190,6 +225,53 @@ public function registerSupplier($profile_pic, $first_name, $last_name, $email, 
     }
 }
 
+    public function registerRecoSupplier($file_name, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $video, $reco, $desc){
+  try{
+
+
+    $stmt = $this->conn->prepare("INSERT INTO  w_reco_suppliers (
+      `supplier_id` ,
+      `first_name` ,
+      `last_name` ,
+      `email` ,
+      `phone` ,
+      `address` ,
+      `rank` ,
+      `category_id` ,
+      `location` ,
+      `price` ,
+      `last_update` ,
+      `profile_pic` ,
+      `video_link` ,
+      `reco` ,
+      `desc` ,
+      `joining_date`
+      )
+      VALUES (
+        NULL, :first_name, :last_name, :email, :phone, :address, :rank, :category_id, :location, :price, NULL, :profile_pic, :video_link ,:reco, :desc, CURRENT_TIMESTAMP
+      );");
+
+      $stmt->bindparam(":first_name", $first_name);
+        $stmt->bindparam(":last_name", $last_name);
+        $stmt->bindparam(":email", $email);
+        $stmt->bindparam(":phone", $phone);
+        $stmt->bindparam(":address", $address);
+        $stmt->bindparam(":rank", $rank);
+      $stmt->bindparam(":category_id", $category_id);
+      $stmt->bindparam(":location", $location);
+      $stmt->bindparam(":price", $price);
+      $stmt->bindparam(":profile_pic", $profile_pic);
+      $stmt->bindparam(":video_link", $video);
+      $stmt->bindparam(":reco", $reco);
+      $stmt->bindparam(":desc", $desc);
+			$stmt->execute();
+
+			return $stmt;
+    }catch (PDOException $e){
+      echo $e->getMessage();
+    }
+}
+    
 public function saveAlbumRecord($album_name, $supplier_id){
     try{
     $stmt = $this->conn->prepare("INSERT INTO w_albums (

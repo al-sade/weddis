@@ -32,7 +32,7 @@
                                 <ul class="nav nav-second-level collapse in">
                                   <li><a href="suppliers-list.php">רשימת ספקים </a></li>
                                   <li><a href="registration.php">הוספה</a></li>
-                                  <li><a href="index.php">צפייה</a></li>
+                                  <li><a href="reco-suppliers-list.php">ספקי המלצות</a></li>
                                 </ul>
                             </li>
                             <li class="active">

@@ -1,6 +1,7 @@
 <?php require_once('head.php'); ?>
     <?php
 $categories = $auth_admin->getCategories();
+$reco_categories = $auth_admin->getRecoCategories();
 $locations = $auth_admin->getLocations();
 ?>
         <?php
@@ -15,6 +16,7 @@ $locations = $auth_admin->getLocations();
 	$category_id = strip_tags($_POST['category_id']);
 	$location = strip_tags($_POST['location']);
 	$price = strip_tags($_POST['price']);
+	$video = strip_tags($_POST['video_link']);
 	$desc = strip_tags($_POST['desc']);
     if(isset($_POST['reco']) && $_POST['reco']){
     $reco = strip_tags($_POST['reco']);
@@ -27,7 +29,11 @@ $locations = $auth_admin->getLocations();
     $file_name = basename($_FILES["fileToUpload"]["name"]);
     $target_file = $target_dir . $file_name;
 
-		$auth_admin->registerSupplier($file_name, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $reco, $desc);
+    if(strpos($category_id, 'r_') !== false){
+		$auth_admin->registerRecoSupplier($file_name, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $video, $reco, $desc);
+    } else{
+        $auth_admin->registerSupplier($file_name, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $video, $reco, $desc);
+    }
 
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -187,6 +193,16 @@ $locations = $auth_admin->getLocations();
                                                                       echo $option;
                                                                     }
                                                                 ?>
+                                                                     <optgroup label="המלצות">
+                                                                        <?php
+                                                                            foreach($reco_categories as $category){
+                                                                              $option = '<option value="r_'.$category['category_id'].'">';
+                                                                              $option .= $category['category_name'];
+                                                                              $option .= '</option>';
+                                                                              echo $option;
+                                                                        }
+                                                                    ?>
+                                                                     </optgroup>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -215,8 +231,14 @@ $locations = $auth_admin->getLocations();
                                                             </div>
                                                         </div>
                                                         <div class="hr-line-dashed"></div>
-                                                        <div class="form-group">
+                                                           <div class="form-group">
                                                             <label class="col-sm-2 control-label"> וידאו</label>
+                                                            <div class="col-sm-10">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <input type="text" name="video_link" placeholder="לינק לוידאו" class="form-control"> </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="hr-line-dashed"></div>
                                                         <div class="form-group">
@@ -232,7 +254,7 @@ $locations = $auth_admin->getLocations();
                                                             <label class="col-sm-2 control-label"> תקציר</label>
                                                             <div class="col-sm-10">
                                                                 <div class="row">
-                                                                    <div class="col-md-10">
+                                                                    <div class="col-md-8">
                                                                         <input type="text" name="desc" placeholder="תקציר" class="form-control"> </div>
                                                                 </div>
                                                             </div>

@@ -33,9 +33,33 @@ class WEDDIS
         }
     }
     
-
+   public function getRecoCatName($cat_id){
+    $stmt = $this->conn->prepare("SELECT category_name 
+    FROM w_reco_cat
+    WHERE category_id = :cat_id;");
+    $stmt->execute(array(':cat_id' => $cat_id));
+    $result = $stmt->fetchall(PDO::FETCH_ASSOC);
+    return $result[0];
+  }
+    
+  public function getRecoCatergories(){
+    $stmt = $this->conn->prepare("SELECT * FROM w_reco_cat;");
+    $stmt->execute();
+    $result = $stmt->fetchall(PDO::FETCH_OBJ);
+    return $result;
+  }
+  
+    
+  public function getRecoCatSuppliers($cat_id){
+    $stmt = $this->conn->prepare("SELECT * FROM w_reco_suppliers
+    WHERE category_id = :cat_id;");
+    $stmt->execute(array(':cat_id' => $cat_id));
+    $result = $stmt->fetchall(PDO::FETCH_OBJ);
+    return $result;
+  }
+    
   public function getSuppliers(){
-    $stmt = $this->conn->prepare("SELECT * FROM weddis.w_suppliers;");
+    $stmt = $this->conn->prepare("SELECT * FROM w_suppliers;");
     $stmt->execute();
     $result = $stmt->fetchall(PDO::FETCH_OBJ);
     return $result;
@@ -49,6 +73,13 @@ class WEDDIS
         return $result[0];
     }
     
+        
+    public function getRecoSupplier($supplier_id){
+        $stmt = $this->conn->prepare("SELECT * FROM w_reco_suppliers where supplier_id=:supplier_id");
+        $stmt->execute(array(':supplier_id' => $supplier_id));
+        $result = $stmt->fetchall(PDO::FETCH_ASSOC);
+        return $result[0];
+    }
     
 //    present category suppliers random based on business logic 
     public function getRandCategorySuppliers($cat_id){

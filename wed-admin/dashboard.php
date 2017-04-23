@@ -14,10 +14,10 @@ require_once('head.php');
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="page-title">
-                                <h1>Dashboard <small></small></h1>
+                                <h1>לוח בקרה <small></small></h1>
                                 <ol class="breadcrumb">
                                     <li><a href="#"><i class="fa fa-home"></i></a></li>
-                                    <li class="active">Dashboard</li>
+                                    <li class="active">לוח בקרה</li>
                                 </ol>
                             </div>
                         </div>
@@ -26,8 +26,8 @@ require_once('head.php');
                         <div class="col-lg-4">
                             <div class="widget-box clearfix">
                                 <div class="pull-left">
-                                    <h4>User Performance</h4>
-                                    <h2>17,50</h2>
+                                    <h4>טפסים שהתקבלו</h4>
+                                    <h2>1750</h2>
                                 </div>
                                 <div class="text-right">
                                     <span id="sparkline8"></span>
@@ -36,35 +36,19 @@ require_once('head.php');
                         </div>
                         <div class="col-lg-8">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <div class="widget-box clearfix">
                                         <div>
-                                            <h4>New orders</h4>
+                                            <h4>אירועים פתוחים</h4>
                                             <h2>580 <i class="fa fa-plus pull-right"></i></h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <div class="widget-box clearfix">
                                         <div>
-                                            <h4>Total sale today</h4>
-                                            <h2>$970 <i class="fa fa-shopping-cart pull-right"></i></h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="widget-box clearfix">
-                                        <div>
-                                            <h4>Pending Orders</h4>
-                                            <h2>256 <i class="fa fa-tasks pull-right"></i></h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="widget-box clearfix">
-                                        <div>
-                                            <h4>Total Income</h4>
-                                            <h2>$9.7k <i class="fa fa-usd pull-right"></i></h2>
+                                            <h4>אירועים שנסגרו החודש</h4>
+                                            <h2>26 <i class="fa fa-tasks pull-right"></i></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +63,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Total Product Sales</h4>
+                                    <h4 class="panel-title">טפסים שהתקבלו / אירועים שנסגרו</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -97,7 +81,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Monthly sale Compare</h4>
+                                    <h4 class="panel-title">קטגוריות חזקות</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -117,7 +101,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Weekly Overview</h4>
+                                    <h4 class="panel-title">פעילות שבועית</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -136,7 +120,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Radar chart</h4>
+                                    <h4 class="panel-title">קטגוריות</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -154,7 +138,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Browser support</h4>
+                                    <h4 class="panel-title">טווח מחירים</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -174,7 +158,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Overall Sales Average</h4>
+                                    <h4 class="panel-title">ספקים שנסגרו / קטגוריה</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -190,7 +174,7 @@ require_once('head.php');
                             <div class="panel panel-card recent-activites">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">Overall Sales Average</h4>
+                                    <h4 class="panel-title">אירועים אחרונים</h4>
                                     <div class="panel-actions">
                                         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                                         <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
@@ -201,12 +185,12 @@ require_once('head.php');
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Phone</th>
-                                                    <th>Street Address</th>
-                                                    <th>% Share</th>
+                                                    <th>שם</th>
+                                                    <th>טלפון</th>
+                                                    <th>eMail</th>
+                                                    <th>ספקים</th>
 
-                                                    <th>Action</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -454,7 +438,7 @@ require_once('head.php');
                 var myNewChart = new Chart(ctx).Bar(barData, barOptions);
 
                 var radarData = {
-                    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+                    labels: ["וידאו", "סטילס", "מוזיקה", "אטרקציות", "גימיקים", "אחר", "אולמות"],
                     datasets: [
                         {
                             label: "My First dataset",

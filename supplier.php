@@ -3,11 +3,20 @@
 <?php 
 require_once('head.php');
     
-$supplier_id = $_GET['sid'];
-$supplier = $weddis->getSupplier($supplier_id);
-$supplier_name = $supplier['first_name'].' '.$supplier['last_name'];
-$supplier_albums = $weddis->getSupplierAlbums($supplier_id);
-$testimonials = $weddis->getTestimonials($supplier_id);
+if (isset($_GET['sid'])){
+    $supplier_id = $_GET['sid'];
+    $supplier = $weddis->getSupplier($supplier_id);
+    $supplier_name = $supplier['first_name'].' '.$supplier['last_name'];
+    $supplier_albums = $weddis->getSupplierAlbums($supplier_id);
+    $testimonials = $weddis->getTestimonials($supplier_id);
+} elseif (isset($_GET['r_sid'])){
+    $supplier_id = $_GET['r_sid'];
+    $supplier = $weddis->getRecoSupplier($supplier_id);
+    $supplier_name = $supplier['first_name'].' '.$supplier['last_name'];
+    $supplier_albums = $weddis->getSupplierAlbums($supplier_id);
+    $testimonials = $weddis->getTestimonials($supplier_id);
+}
+
 require_once('lunar_head.php');
 ?>
     <style>
@@ -47,19 +56,17 @@ require_once('lunar_head.php');
                             <button href="#" class="wishlist supplier__wishlist pull-left" supplier_name="<?php echo $supplier_name;  ?>" supplier_id="<?php echo $supplier_id; ?>" >Add to Wishlist <i class="wishlist__icon"></i></button>
 
                         </div>
-                        <div class="col-xs-12 col-sm-4 col-md-3 supplier__img">
-                            <a href="#"> <img src="assets/img/team-photo.jpg" alt="Photo" class="img-responsive"> </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-8 col-md-6 supplier__description">
+
+                        <div class="col-xs-12 col-sm-8 col-md-8 supplier__description">
                             <p>
                                 <?php echo $supplier['desc']; ?>
                                     <p>
                         </div>
-                        <div class="col-xs-12 col-md-3 supplier__video">
+                        <div class="col-xs-12 col-md-4 supplier__video">
                             <!-- Video Container - use it to embed video -->
                             <div class="video__container">
                                 <!-- Place to embed code from Youtube -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="<?php echo $supplier['video_link']; ?>" frameborder="0" allowfullscreen></iframe>
                             </div>
                             <!-- /Video Container-->
                         </div>

@@ -1,7 +1,7 @@
 <?php
 require_once('head.php');
 
- $status_arr = ['חדש' , 'בטיפול', 'ישן'];
+ $status_arr = ['חדש' , 'בטיפול', 'ישן', 'הושלם'];
 
 $event_id = $_GET['eid'];
 $event = $auth_admin->getEvent($event_id);
