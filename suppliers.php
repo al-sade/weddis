@@ -66,7 +66,9 @@ require_once('lunar_head.php');
 						<img src="<?php echo 'assets/uploads/'.$supplier->profile_pic; ?>" alt="Photo" class="img-responsive">
 						<!-- Wishlist Badge -->
 						<div class="team__wishlist">
-                             <button href="#" class="wishlist supplier_wishlist_button" supplier_name="<?php echo $sup_name;  ?>" supplier_id="<?php echo $supplier->supplier_id ?>" >Wishlist <i class="wishlist__icon"></i></button>
+                            <?php if (isset($_GET['cat'])){ ?>
+                                <button href="#" class="wishlist supplier_wishlist_button" supplier_name="<?php echo $sup_name;  ?>" supplier_id="<?php echo $supplier->supplier_id ?>" >Wishlist <i class="wishlist__icon"></i></button>
+                            <?php } ?>
 <!--							<img src="assets/img/icons/icon-heart.png" class="img-responsive team__wishlist__heart" alt="Wishlist icon">-->
 							
 						</div><!-- /Wishlist Badge -->

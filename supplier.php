@@ -53,7 +53,9 @@ require_once('lunar_head.php');
                                 <input type="number" name="supplierRating" id="some_id" class="rating" data-inline> </div>
                             <!-- /Suppliers Rating -->
 <!--                            TODO: Real supplier data-->
+                            <?php if (isset($_GET['sid'])){ ?>
                             <button href="#" class="wishlist supplier__wishlist pull-left" supplier_name="<?php echo $supplier_name;  ?>" supplier_id="<?php echo $supplier_id; ?>" >Add to Wishlist <i class="wishlist__icon"></i></button>
+                            <?php } ?>
 
                         </div>
 
