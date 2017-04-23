@@ -153,4 +153,29 @@ class WEDDIS
             $result = $stmt->fetchall(PDO::FETCH_OBJ);
             return $result;
     }
+    
+    public function sendMail($name, $phone, $email, $date, $message, $suppliers){
+        $to = $email;
+        $subject = "ברוכים הבאים ל - weddis!";
+
+        $msg = "<html><head><title>ברוכים הבאים ל - weddis</title></head><body>";
+        $msg .= "<p>תודה לכם על הצטרפותכם למערכת weddis</p>";
+        $msg .= "שם: ".$name.'</br>';
+        $msg .= "טלפון: ".$phone.'</br>';
+        $msg .= "eMail: ".$email.'</br>';
+        $msg .= "תאריך אירוע: : ".$date.'</br>';
+        $msg .= "הודעה: ".$message.'</br>';
+        $msg .= "ספקים: ".$suppliers.'</br>';
+        $msg .= "</body></html>";
+
+        // Always set content-type when sending HTML email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        // More headers
+        $headers .= 'From: <contact@weddis.com>' . "\r\n";
+        $headers .= 'Cc: al@opiiweb.com' . "\r\n";
+
+        mail($to,$subject,$msg,$headers);
+    }
 }

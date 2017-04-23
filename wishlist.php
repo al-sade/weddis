@@ -20,6 +20,11 @@
 		echo $e->getMessage();
 	}
 
+    try {
+        $weddis->sendMail($name, $phone, $email, $date, $message, $suppliers);
+    } catch (Exception $e) {
+		echo $e->getMessage();
+	}
 }
 ?>
     <body>

@@ -30,9 +30,12 @@ require_once('lunar_head.php');
             </section>
             <!-- /Main Screen Section -->
             <!-- Suppliers List Section -->
+        
             <section id="suppliers__list">
                 <div class="container">
                     <div class="row">
+                        
+                        <?php if (isset($_GET['cat'])){ ?>
                         <!-- Suppliers Filter Panel -->
                         <form class="col-xs-12 suppliers__filter"> <i class="suppliersFilter__locationIcon"></i>
                             <select id="suppliersFilter__location">
@@ -53,6 +56,7 @@ require_once('lunar_head.php');
                             </div>
                         </form>
                         <!-- /Suppliers Filter Panel -->
+                        <?php } ?>
                     </div>
                     <!-- Suppliers List Row -->
                     <div class="row">
