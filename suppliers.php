@@ -47,10 +47,11 @@ require_once('lunar_head.php');
                                     <label for="suppliersFilter_priceMin">מחיר</label>
                                     <select>
                                         <option value="" selected>בחר</option>
-                                        <option value="low">0-2500</option>
-                                        <option value="mid-low">2500-4500</option>
-                                        <option value="mid">4500-7000</option>
-                                        <option value="high">7000+</option>
+                                        <option value="low">0-1500</option>
+                                        <option value="mid-low">1500-3000</option>
+                                        <option value="mid">3000-4500</option>
+                                        <option value="high">4500-6000</option>
+                                        <option value="premium">6000+</option>
                                     </select>
                                 </div>
                             </div>

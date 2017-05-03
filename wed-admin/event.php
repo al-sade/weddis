@@ -1,7 +1,7 @@
 <?php
 require_once('head.php');
 
- $status_arr = ['חדש' , 'בטיפול', 'ישן', 'הושלם'];
+$status_arr = $auth_admin->getEventStatusList();
 
 $event_id = $_GET['eid'];
 $event = $auth_admin->getEvent($event_id);
@@ -50,7 +50,7 @@ if(isset($_POST['update_status'])){
                                                       }else{
                                                         $option = '<option value="'.$key.'">';
                                                       }
-                                                      $option .= $status;
+                                                      $option .= $status_arr[$key]['status_name'];
                                                       $option .= '</option>';
                                                       echo $option;
                                                     }
@@ -103,6 +103,9 @@ if(isset($_POST['update_status'])){
                                     </table>
                                 </div>
                             </div>
+                            
+                                                        <!-- end .page title-->
+
                             <div class="col-md-5 margin-b-30">
                                 <div class="profile-edit">
                                     <h2 class="mb-xlg">ספקים שנבחרו</h2>

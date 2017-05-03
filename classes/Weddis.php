@@ -1,6 +1,7 @@
 
 <?php
 require_once(__DIR__.'/Database.php');
+require_once(__DIR__.'/MailSpool.php');
 require_once(__DIR__.'/../config.php');
 
 class WEDDIS
@@ -114,14 +115,16 @@ class WEDDIS
         $stmt = $this->conn->prepare("INSERT INTO w_events (
             `event_id` ,
             `event_date` ,
+            `event_desc` ,
             `contact_name` ,
             `contact_phone` ,
             `contact_mail` ,
             `message`,
             `suppliers`,
-            `status`
+            `status`,
+            `submission_date`
             )
-            VALUES (NULL ,  :event_date, :contact_name, :contact_phone, :contact_mail, :message , :suppliers, :status);");
+            VALUES (NULL ,  :event_date, NULL, :contact_name, :contact_phone, :contact_mail, :message , :suppliers, :status, CURRENT_TIMESTAMP);");
         
             $stmt->bindparam(":event_date", $date);
 			$stmt->bindparam(":contact_name", $name);
@@ -131,6 +134,10 @@ class WEDDIS
 			$stmt->bindparam(":suppliers", $suppliers);
 			$stmt->bindparam(":status", $status);
 			$stmt->execute();
+            
+//            MailSpool::addMail('Hello', $email, 'Hello from the spool');
+//            register_shutdown_function('MailSpool::send');
+//            exit();
 			return $stmt;
         }
 		catch(PDOException $e)
@@ -158,15 +165,26 @@ class WEDDIS
         $to = $email;
         $subject = "ברוכים הבאים ל - weddis!";
 
-        $msg = "<html><head><title>ברוכים הבאים ל - weddis</title></head><body>";
-        $msg .= "<p>תודה לכם על הצטרפותכם למערכת weddis</p>";
-        $msg .= "שם: ".$name.'</br>';
-        $msg .= "טלפון: ".$phone.'</br>';
-        $msg .= "eMail: ".$email.'</br>';
-        $msg .= "תאריך אירוע: : ".$date.'</br>';
-        $msg .= "הודעה: ".$message.'</br>';
-        $msg .= "ספקים: ".$suppliers.'</br>';
-        $msg .= "</body></html>";
+        $msg = '
+    <html>
+    <head>
+        <title>Welcome to CodexWorld</title>
+    </head>
+    <body>
+        <h1>Thanks you for joining with us!</h1>
+        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
+            <tr>
+                <th>Name:</th><td>CodexWorld</td>
+            </tr>
+            <tr style="background-color: #e0e0e0;">
+                <th>Email:</th><td>contact@codexworld.com</td>
+            </tr>
+            <tr>
+                <th>Website:</th><td><a href="http://www.codexworld.com">www.codexworld.com</a></td>
+            </tr>
+        </table>
+    </body>
+    </html>';
 
         // Always set content-type when sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";

@@ -48,37 +48,6 @@ $categories = $weddis->getRecoCatergories();
     </div>
 </section><!-- /Suppliers List Section -->
 
-<section class="supplier__section">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 supplier__headline__panel">
-				<h2 class="supplier__name pull-right">שם ספק</h2>
-				<!-- Suppliers Rating -->
-				<div class="supplier__rating pull-right">
-					<label>דֵרוּג</label>
-					<input type="number" name="supplierRating" id="some_id" class="rating" data-inline>
-				</div><!-- /Suppliers Rating -->
-				<a href="#" class="supplier__wishlist pull-left">Add to Wishlist <i class="wishlistButton__icon"></i></a>
-			</div>
-			<div class="col-xs-12 col-sm-4 col-md-3 supplier__img">
-				<a href="#">
-					<img src="assets/img/team-photo.jpg" alt="Photo" class="img-responsive">
-				</a>
-			</div>
-			<div class="col-xs-12 col-sm-8 col-md-6 supplier__description">
-				<p>יש המון גרסאות זמינות לפסקאות של Lorem Ipsum. אבל רובם עברו שינויים בצורה זו או אחרת, על ידי השתלת הומור או מילים אקראיות שלא נראות אפילו מעט אמינות. אם אתה הולך להשתמש במקטעים של של Lorem Ipsum אתה צריך להיות בטוח שאין משהו מביך חבוי בתוך הטקסט. כל מחוללי הטקסט של Lorem Ipsum שנמצאים ברשת הא<p>
-			</div>
-			<div class="col-xs-12 col-md-3 supplier__video">
-				<!-- Video Container - use it to embed video -->
-				<div class="video__container">
-					<!-- Place to embed code from Youtube -->
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
-				</div><!-- /Video Container-->
-			</div>
-		</div>
-	</div>
-</section>
-
 
 <!-- Footer  -->
 <footer>

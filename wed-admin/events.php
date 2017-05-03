@@ -1,7 +1,7 @@
 <?php
 require_once('head.php');
 $events= $auth_admin->getAllEvents();
- $status_arr = ['חדש' , 'בטיפול', 'ישן', 'הושלם'];
+$status_arr = $auth_admin->getEventStatusList();
 
  ?>
     <body>
@@ -17,7 +17,7 @@ $events= $auth_admin->getAllEvents();
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="page-title">
-                                <h1>ספקים <small></small></h1>
+                                <h1>אירועים <small></small></h1>
                                 <ol class="breadcrumb">
                                     <li><a href="#"><i class="fa fa-home"></i></a></li>
                                     <li class="active">רשימת אירועים</li>
@@ -37,6 +37,7 @@ $events= $auth_admin->getAllEvents();
                                                 <th>תאריך</th>
                                                 <th>eMail</th>
                                                 <th>טלפון</th>
+                                                <th>התקבל</th>
                                                 <th>סטטוס</th>
                                             </tr>
                                         </thead>
@@ -50,10 +51,11 @@ $events= $auth_admin->getAllEvents();
                                                     $output = '<tr>';  
                                                   }
                                                 $output .= '<td><a href="event.php?eid='.$event['event_id'].'">'.$event['contact_name'].'</a></td>';
+                                                $output .= '<td>'.$event['event_date'].'</td>';
                                                 $output .= '<td>'.$event['contact_mail'].'</td>';
                                                 $output .= '<td>'.$event['contact_phone'].'</td>';
-                                                $output .= '<td>'.$event['event_date'].'</td>';
-                                                $output .= '<td class="table-danger">'.$status_arr[$event['status']].'</td>';
+                                                $output .= '<td>'.$event['submission_date'].'</td>';                                                  
+                                                $output .= '<td class="table-danger">'.$status_arr[$event['status']]['status_name'].'</td>';
                                                 $output .= '</tr>';
                                                 echo $output;
                                               }

@@ -121,7 +121,10 @@ public function getRecoSupplier($supplier_id){
     
   public function getAllEvents()
 {
-  $stmt = $this->conn->prepare(" SELECT * FROM w_events");
+  $stmt = $this->conn->prepare(" 
+  SELECT * FROM w_events
+  ORDER BY submission_date DESC
+  ");
   $stmt->execute();
   $result=$stmt->fetchall(PDO::FETCH_ASSOC);
   return $result;
@@ -161,23 +164,31 @@ public function getLocations(){
     
 public function updateEventStatus($event_id, $new_status){
 
-    $stmt = $this->conn->prepare("UPDATE  w_events SET  status = :new_status WHERE  event_id = :event_id;");
+    $stmt = $this->conn->prepare("UPDATE w_events SET status = :new_status WHERE event_id = :event_id;");
     $stmt->bindparam(":event_id", $event_id);
     $stmt->bindparam(":new_status", $new_status);
 			$stmt->execute();
 			return $stmt;
 }
     
+public function getEventStatusList(){
+  $stmt = $this->conn->prepare(" SELECT * FROM w_event_status");
+  $stmt->execute();
+  $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+    
+    return $result;
+}   
+    
 public function getEventStatus($event_id){
   $stmt = $this->conn->prepare(" SELECT status FROM w_events WHERE event_id = :event_id");
   $stmt->execute(array(':event_id' => $event_id));
   $result=$stmt->fetchall(PDO::FETCH_ASSOC);
   
- $status_arr = ['חדש' , 'בטיפול', 'ישן'];
+  $status_arr = $this->getEventStatusList();
 
   return $result[0]['status'];
 }
-    
+
 public function registerSupplier($file_name, $first_name, $last_name, $email, $phone, $address, $rank, $category_id, $location, $price, $video, $reco, $desc){
   try{
 
