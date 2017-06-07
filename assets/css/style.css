@@ -56,6 +56,7 @@ td.w-pname {
     background: transparent;
     box-shadow: none !important;
 }
+
 /* ---------------------------------------------- /*
  * Header
 /* ---------------------------------------------- */
@@ -1160,6 +1161,14 @@ textarea.wishlist__form__input {
     background: rgba(255, 255, 255, 0.3);
 }
 
+#suppliers__list .team__img{
+    padding-top: 2.5vh;
+    background-size: cover;
+    min-height: 132px;
+    text-align: center;
+    background: #FFF;
+}
+
 .team__img:hover .team__img__hover {
     display: flex;
     justify-content: center;
@@ -1170,6 +1179,10 @@ textarea.wishlist__form__input {
     width: 37px;
     height: 36px;
     background: url("../img/icons/icon-team-img-hover.png") no-repeat center;
+}
+
+img.reco_icon {
+    max-height: 80px;
 }
 
 .wishlist{

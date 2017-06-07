@@ -10,4 +10,3 @@ $images_arr[$sup_id] = $weddis->getSupplierImage($sup_id);
 
 echo(json_encode($images_arr));
 return 1;
-?>

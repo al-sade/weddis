@@ -30,8 +30,8 @@ $categories = $weddis->getRecoCatergories();
             <?php foreach ($categories as $category) { ?>
 			<div class="col-xs-12 col-sm-3 supplierPage__supplier">
 				<div class="team__img">
-					<a href="#">
-						<img src="assets/img/main.jpg" alt="Photo" class="img-responsive">
+					<a href="<?php echo $category->category_id; ?>">
+						<img class="reco_icon" src="assets/img/icons/recommendations/<?php echo $category->category_id ?>.png" alt="Photo" class="img-responsive">
 
 					</a>
 				</div>
@@ -46,8 +46,8 @@ $categories = $weddis->getRecoCatergories();
             <?php } ?>
 	   </div>
     </div>
-</section><!-- /Suppliers List Section -->
 
+</section>
 
 <!-- Footer  -->
 <footer>
@@ -149,8 +149,6 @@ $categories = $weddis->getRecoCatergories();
 	<a href="#top"></a>
 </div><!-- /Scroll to top-->
 
-<script src="assets/js/jquery-2.2.4.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap-rating-input.min.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/jquery.viewbox.min.js"></script>

@@ -1,6 +1,3 @@
-<!--config file-->
-<?php require_once('config.php') ?>
-
 <!-- Fixed navbar -->
 <header id="top" class="navbar">
 	<div class="container">
@@ -79,11 +76,11 @@
 			<table id="wish_list_item" border="0"><tbody></tbody></table>
 		</div>
 -->
-            
+
 		</div> <!-- /Header Control Panel -->
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="header__menu">
-				<li class="active"><a href="<?php echo BASEURL ?>">דף הבית</a></li>
+				<li class="active"><a href="/">דף הבית</a></li>
 				<li><a href="#">אודות</a></li>
 				<li><a href="suppliers.php?cat=סטילס">סטילס</a></li>
 				<li><a href="suppliers.php?cat=וידאו">וידאו</a></li>

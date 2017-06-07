@@ -1,8 +1,8 @@
 <?php
  define('HOST', 'localhost');
  define('USER', 'root');
- define('PASS', 'Alaba1515');
- define('DB', 'weddis');
+ define('PASS', 'alaba1515');
+ define('DB', 'weddiz_dev');
 
  define('BASEURL', '/weddis/');
  define('LOCAL', '/var/www/html/weddis/assets/uploads/');

@@ -261,17 +261,17 @@ require_once('head.php');
             </div>
         </section>
 
-        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js"></script>
         <script src="js/metisMenu.min.js"></script>
         <script src="js/jquery.nanoscroller.min.js"></script>
         <script src="js/jquery-jvectormap-1.2.2.min.js"></script>
         <!-- Flot -->
-        <script src="js/flot/jquery.flot.js"></script>
-        <script src="js/flot/jquery.flot.tooltip.min.js"></script>
-        <script src="js/flot/jquery.flot.resize.js"></script>
-        <script src="js/flot/jquery.flot.pie.js"></script>
-        <script src="js/chartjs/Chart.min.js"></script>
+        <script src="js/jquery.flot.min.js"></script>
+        <script src="js/jquery.flot.tooltip.min.js"></script>
+        <script src="js/jquery.flot.resize.js"></script>
+        <script src="js/jquery.flot.pie.js"></script>
+        <script src="js/Chart.min.js"></script>
         <script src="js/pace.min.js"></script>
         <script src="js/waves.min.js"></script>
         <script src="js/morris_chart/raphael-2.1.0.min.js"></script>
@@ -281,7 +281,7 @@ require_once('head.php');
         <!--        <script src="js/jquery.nanoscroller.min.js"></script>-->
         <script type="text/javascript" src="js/custom.js"></script>
         <!-- ChartJS-->
-        <script src="js/chartjs/Chart.min.js"></script>
+        <script src="js/Chart.min.js"></script>
 
         <!--page js-->
         <script>

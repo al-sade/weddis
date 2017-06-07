@@ -98,7 +98,7 @@ class WEDDIS
     //improve to query oall idsnce for  - get_wishlist.php
 
     public function getSupplierImage($id){
-        $stmt = $this->conn->prepare("SELECT profile_pic FROM weddis.w_suppliers where supplier_id=:supplier_id");
+        $stmt = $this->conn->prepare("SELECT profile_pic FROM w_suppliers where supplier_id=:supplier_id");
         $stmt->execute(array(':supplier_id' => $id));
         $result = $stmt->fetchall(PDO::FETCH_ASSOC);
         if(isset($result[0]['profile_pic'])){

@@ -68,7 +68,8 @@ $suppliers= $auth_admin->getAllSuppliers();
                 </div>
             </div>
         </section>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js"></script>
         <script src="js/metisMenu.min.js"></script><script src="js/jquery.nanoscroller.min.js"></script>
         <script src="js/jquery-jvectormap-1.2.2.min.js"></script>
